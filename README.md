@@ -50,12 +50,18 @@ go build
 ### Docker Deployment
 
 ```bash
-# Clone the repository
-git clone https://github.com/missuo/raycast2api
+# Create a directory for the Docker Compose file
+mkdir raycast2api
 cd raycast2api
 
+# Download the Docker Compose file
+wget -O compose.yaml https://raw.githubusercontent.com/missuo/raycast2api/refs/heads/main/compose.yaml
+
+# Edit the compose.yaml file
+nano compose.yaml
+
 # Run Docker container
-docker compose up -d --build
+docker compose up -d
 ```
 
 ## Usage
@@ -93,7 +99,7 @@ Unlike the previous version, this Go implementation works seamlessly with Cursor
 
 ## Available Models
 
-The following model list was updated on April 19, 2025, at 09:42 PM EDT. 
+The following model list was updated on April 26, 2025, at 05:29 PM EDT. 
 
 Some models in the following list still indicate that the model does not exist, even when sending the exact same request as the Raycast App. We suspect that the server has implemented authentication for the signature.
 
@@ -112,6 +118,7 @@ Some models in the following list still indicate that the model does not exist, 
 | gemini-1.5-pro | Google | ✅ |
 | gemini-2.0-flash | Google | ✅ |
 | gemini-2.0-flash-thinking-exp-01-21 | Google | ✅ |
+| gemini-2.5-flash-preview-04-17 | Google | ✅ |
 | gemini-2.5-pro-preview-03-25 | Google | ❌ |
 | grok-2-latest | XAI | ✅ |
 | grok-3-fast-beta | XAI | ❌ |
